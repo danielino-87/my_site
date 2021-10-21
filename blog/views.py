@@ -6,7 +6,7 @@ from django.template.loader import render_to_string
 from django.shortcuts import render
 
 def starting_page (request):
-    pass
+    return render (request , "blog/index.html")
 
 def posts (request , post):
     pass

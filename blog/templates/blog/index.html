@@ -1,13 +1,71 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block title %}
-  Computational Biochemistry Lab -  DBCF Department - University of Siena
-
+  Wine Blog
 {% endblock  %}
 
 
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/index.css"%}">
+{% endblock  %}
+
+
+
 {% block  body %}
-  <h1> Welcome to our Web Site</h1>
+  <header id="main_navigation">
+     <h1> <a href="">Il Blog del Vino</a></h1>
+
+     <nav> 
+     <a href="">Tutti i Post</a>
+     </nav>
+  </header>
+
+  <section id="welcome">
+    <header>
+        <img src="" alt="Daniele - The Autor of this Blog" />
+        <h2> IL BLOG DELL'UVA E DEL VINO </h2>
+        <p> Ciao a tutti ! Questo Blog nasce dal desiderio di far conoscere l'Uva e il Vino del nostro terreno agricolo </p>
+    </header>
+  </section>
+
+  <section id="latest-posts">
+
+    <h2> I miei post più recenti </h2>
+    <ul>
+       <li> 
+         <article class="post">
+             <a href="">
+                <img src="" alt="Uva Fragola" />
+                <div class="post__content">
+                <h3>La nostra Uva e il nostro terreno</h3>
+                <p> La nostra Uva  viene raccolta direttamente 
+                   da noi dai filari e dalle pergole , 
+                   per poi essere successivamente tritata e torchiata. Alla fine del processo di fermentazione
+                   vine filtrato il vino più volte per eliminare tutto il mosto residuo. Dopodichè , il vino finale viene versato in botti 
+                   e lasciato riposare.
+                 </p>
+                </div>
+             </a>
+              
+         </article>
+       
+       </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2> Cosa Facciamo e cosa proponiamo ai nostri clienti e ai più curiosi </h2> 
+      <p>Compra/Vendita delle Uve al Dettaglio e Produzione del Vino </p>
+
+
+     <p>Ai nostri clienti e ai più curiosi , a tutti gli appassionati di vino e uva , proponiamo delle giornate di visita presso il 
+       nostro terreno , mentre ci accingiamo a svolgere le operazioni di tritatura ,  torchiatura e tutte le altre operazioni che fanno parte
+       dell'intero processo della produzione del Vino. Proponiamo anche a persone che vogliono produrre il vino per conto proprio , la vendita al dettaglio delle nostre Uve.
+       Il cliente può anche effettuare la vendemmia per conto proprio presso il nostro terreno , e produrlo direttamente con la nostra attrezzatura , sotto la nostra supervisione.    
+     </p>  
+   </section>
 
 {% endblock  %}
 

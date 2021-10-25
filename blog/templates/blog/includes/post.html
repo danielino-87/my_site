@@ -3,15 +3,10 @@
 <li> 
          <article class="post">
              <a href="{% url "post-detail-page" "uva-fragola" %}">
-                <img src="{%static "blog/images/uva_fragola_bianca.jfif" %}" alt="Uva Fragola" />
+                <img src="{%static "blog/images/"|add:post.image %}" alt="Uva Fragola" />
                 <div class="post__content">
-                <h3>La nostra Uva e il nostro terreno</h3>
-                <p> La nostra Uva  viene raccolta direttamente 
-                   da noi dai filari e dalle pergole , 
-                   per poi essere successivamente tritata e torchiata. Alla fine del processo di fermentazione
-                   vine filtrato il vino più volte per eliminare tutto il mosto residuo. Dopodichè , il vino finale viene versato in botti 
-                   e lasciato riposare.
-                 </p>
+                <h3>{{ post.title }}</h3>
+                <p> {{ post.excerpt }} </p>
                 </div>
              </a>
               

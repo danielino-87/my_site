@@ -29,7 +29,10 @@
 
     <h2> I miei post più recenti </h2>
     <ul>
-       {% include "blog/includes/post.html" %}
+       {% for post in posts %}
+          {% include "blog/includes/post.html" %}
+       {% endfor %}
+      
     </ul>
   </section>
 

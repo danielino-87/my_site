@@ -1,0 +1,16 @@
+{
+  "python.pythonPath": "C:/Users/daniele/anaconda3/python.exe",
+
+  "python.languageServer": "Pylance",
+
+  "files.associations": {
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html",
+    "**/templates/**/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+},
+
+"emmet.includeLanguage" : {"django-html":"html"}
+
+
+}

@@ -33,7 +33,7 @@ all_posts = [
         "image": "uva_fragola_bianca.jfif",
         "author": "Daniele",
         "date": date(2022, 3, 10),
-        "title": "Produzione del Vino : Tutti i passaggi",
+        "title": "Produzione del Vino step by step",
         "excerpt": "Did you ever spend hours searching that one error in your code? Yep - that's what happened to me yesterday...",
         "content": """
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
@@ -54,7 +54,7 @@ all_posts = [
         "image": "marmellata-uva-fragola.jfif",
         "author": "Daniele",
         "date": date(2020, 8, 5),
-        "title": "Ricetta :  Marmellata di Uva Fragola",
+        "title": "Marmellata di Uva Fragola",
         "excerpt": "Nature is amazing! The amount of inspiration I get when walking in nature is incredible!",
         "content": """
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
@@ -72,8 +72,8 @@ all_posts = [
     }
 ]
 
-def get_date(pippo):
-    return pippo['date']
+def get_date(post):
+    return post['date']
 
 
 def starting_page (request):
@@ -84,7 +84,12 @@ def starting_page (request):
     })
 
 def posts (request):
-    return render (request,"blog/all-posts.html" )
+    return render (request,"blog/all-posts.html", {
+        "all_posts": all_posts
+    } )
 
 def single_post(request,slug):
-    return render (request , "blog/post-detail.html")
+   identified_post =  next(post for post in all_posts if  post ['slug'] == slug)
+   return render (request , "blog/post-detail.html" , {
+      "post" : identified_post
+    })

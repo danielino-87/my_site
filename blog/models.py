@@ -16,11 +16,7 @@ class Author(models.Model):
     last_name = models.CharField(max_length=100)
     email_address = models.EmailField()
     
-    def all_name(self):
-        return f"{self.first_name} {self.last_name}"
 
-    def __str__(self) :
-        return self.all_name()
 
 
 
@@ -35,11 +31,7 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag)
 
 
-    def get_absolute_url(self):
-        return reverse ("post-detail-page" , args=[self.slug])
 
-    def __str__(self):
-        return f"{self.title} ({self.exerpt})" 
 
 
 

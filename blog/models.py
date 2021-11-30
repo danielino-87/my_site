@@ -37,6 +37,11 @@ class Post(models.Model):
     content = models.TextField(validators=[MinLengthValidator(10)])
     tags = models.ManyToManyField(Tag)
 
+    def get_absolute_url(self):
+        return reverse ("post-detail-page" , args=[self.slug])
+
+
+
 
 
 

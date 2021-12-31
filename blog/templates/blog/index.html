@@ -1,52 +1,41 @@
-{% extends 'base.html' %}
+{% extends "base.html" %} 
 {% load static %}
 
-
-{% block title %}
-  Wine Blog
-{% endblock  %}
-
+{% block title %} 
+My Blog 
+{% endblock %} 
 
 {% block css_files %}
-  <link rel="stylesheet" href="{% static "blog/post.css"%}">
-  <link rel="stylesheet" href="{% static "blog/index.css"%}">
-{% endblock  %}
+  <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+  <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock %}
 
+{% block content %}
+<section id="welcome">
+  <header>
+    <img src="{% static "blog/images/me.jpg" %}" alt="Rebecca - The Author Of This Blog" />
+    <h2>REBECCA'S BLOG</h2>
+  </header>
+  <p>Ciao a tutti! Mi presento sono Rebecca e questo è il mio blog! </p>
+</section>
 
+<section id="latest-posts">
+  <h2>I miei ultimi romanzi</h2>
 
-{% block  body %}
+  <ul>
+    {% for post in posts %}
+      {% include "blog/includes/post.html" %}
+    {% endfor %}
+  </ul>
+</section>
 
-
-  <section id="welcome">
-    <header>
-        <img src="{%static "blog/images/resized.jpg" %}" alt="Daniele - The Autor of this Blog" />
-        <h2> IL BLOG DELL'UVA E DEL VINO </h2>
-        <p> Ciao a tutti ! Questo Blog nasce dal desiderio di far conoscere l'Uva e il Vino del nostro terreno agricolo </p>
-    </header>
-  </section>
-
-  <section id="latest-posts">
-
-    <h2> I miei post più recenti </h2>
-    <ul>
-       {% for post in posts %}
-          {% include "blog/includes/post.html" %}
-       {% endfor %}
-      
-    </ul>
-  </section>
-
-  <section>
-    <h2> Cosa Facciamo e cosa proponiamo ai nostri clienti e ai più curiosi </h2> 
-      <p>Compra/Vendita delle Uve al Dettaglio e Produzione del Vino </p>
-
-
-     <p>Ai nostri clienti e ai più curiosi , a tutti gli appassionati di vino e uva , proponiamo delle giornate di visita presso il 
-       nostro terreno , mentre ci accingiamo a svolgere le operazioni di tritatura ,  torchiatura e tutte le altre operazioni che fanno parte
-       dell'intero processo della produzione del Vino. Proponiamo anche a persone che vogliono produrre il vino per conto proprio , la vendita al dettaglio delle nostre Uve.
-       Il cliente può anche effettuare la vendemmia per conto proprio presso il nostro terreno , e produrlo direttamente con la nostra attrezzatura , sotto la nostra supervisione.    
-     </p>  
-   </section>
-
-{% endblock  %}
-
+<section id="about">
+  <h2>Cosa Faccio</h2>
+  <p>
+    Amo scrivere e leggere romanzi di ogni genere , ma soprattutto i gialli e i polizieschi
+  </p>
+  <p>
+    Il mio obiettivo è crescere come scrittrice e far conoscere alle persone i miei testi 
+  </p>
+</section>
+{% endblock %}

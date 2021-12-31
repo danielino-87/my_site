@@ -18,7 +18,7 @@ class StartingPageView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        data = queryset[:]
+        data = queryset[:6]
         return data
 
 
